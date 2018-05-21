@@ -1,8 +1,8 @@
 <template>
-  <div id = "inner-list">
+  <li>
     <span>{{item.name}}</span>
     <button @click= "$emit('remove')"> X </button>
-  </div>
+  </li>
 </template>
 
 <script>

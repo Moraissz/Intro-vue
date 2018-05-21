@@ -1,10 +1,10 @@
 <template>
 <div id = "app">
   <ToDoListTitle> </ToDoListTitle>
-  <InputList v-bind:data="data" @addTodo= "addTodo"></InputList>
-  <CreateList v-bind:list="list" @remove= "removeItem">
-
-  </CreateList>
+  <InputList @addTodo= "addTodo"></InputList>
+  <create-list>
+    <InnerList v-for=" (item, index) in list" :key="item.index" v-bind:item="item" @remove = "removeItem(index)"></InnerList>
+  </create-list>
 </div>
 </template>
 

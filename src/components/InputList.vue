@@ -1,6 +1,6 @@
 <template>
 <div id= "InputList">
-<input type="text" v-model="data" @keyup.enter="$emit('addTodo',data)">
+<input type="text" v-model="data" @keyup.enter="handleEnter">
 </div>
 </template>
 
@@ -13,8 +13,10 @@ export default {
     };
   },
   methods : {
-    clearInput() {
-      data = '';
+    handleEnter() {
+      this.$emit('addTodo',this.data);
+      this.data = '';
+
     }
   }
 }
